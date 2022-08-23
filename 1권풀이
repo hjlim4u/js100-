@@ -205,3 +205,83 @@ while (arr && set1.length<3){
 var input = prompt("입력: ");
 input.replace("q", "e");
 //40
+const limit = prompt("입력: ");
+const num = parseInt(prompt("입력: "));
+let arr = [];
+for (let i = 0; i < num; i++) {
+  arr.push(parseInt(prompt("입력: ")));
+}
+let count = 0;
+arr.sort((a, b) => a - b);
+count = arr.reduce((prev, curr) => {
+  if (prev + curr > limit) {
+    return prev;
+  }
+  return prev + curr;
+}, 0);
+
+//41
+function isPrime(num) {
+  if (num <= 1) {
+    return "No";
+  }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return "No";
+    }
+  }
+  return "Yes";
+}
+
+//42
+let a = parseInt(prompt("month: "));
+let b = parseInt(prompt("day: "));
+const day = new Date(2020, a, b);
+week = [SUN, MON, TUE, WED, THU, FRI, SAT];
+console.log(`${week[day.getDay()]}`);
+
+//43
+const number = parseInt(prompt("Enter a decimal number: "));
+const result = number.toString(2);
+//44
+let arr = prompt("입력: ").split('').map((value)=>parseInt(value));
+let sum=arr.reduce((prev, curr)=>{
+  return prev+curr;
+});
+console.log(sum);
+//45
+const pivot = new Date(2019, 1);
+pivot.getTime();
+//46
+let sum = 0;
+for (let i = 1; i < 21; i++) {
+  sum += i
+    .toString()
+    .split("")
+    .reduce((prev, curr) => {
+      return prev + parseInt(curr);
+    });
+}
+//47
+let sets = new Set();
+for (name in people) {
+  sets.add(name);
+}
+console.log(sets.size);
+
+//48
+var input = prompt("입력: ");
+let arr = [];
+for (char of input) {
+  if (char >= "a") {
+    arr.push(char.toUpperCase());
+  } else {
+    arr.push(char.toLowerCase());
+  }
+}
+console.log(arr.join(""));
+
+//49
+var arr = prompt("입력: ").split();
+console.log(Math.max(...arr));
+
